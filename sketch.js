@@ -89,12 +89,12 @@ function draw() {
 function spawn_clouds() {
   //write code here to spawn the clouds
   if (frameCount % 60 === 0) {
-    cloud = createSprite(600,100,40,10);
+    cloud = createSprite(width+10,height-100,40,10);
     cloud.addImage(cloudImage);
     cloud.y = Math.round(random(10,60));
     cloud.scale = 0.4;
     cloud.velocityX = -3;
-    cloud.lifetime=200;
+    cloud.lifetime=(width+10)/2;
     //adjust the depth
     cloud.depth = trex.depth
     trex.depth = trex.depth + 1;
@@ -103,7 +103,7 @@ function spawn_clouds() {
 }
 function spawn_obstacles(){
  if(frameCount%70 === 0){
- obstacles=createSprite(600,170,20,40); 
+ obstacles=createSprite(width+10,height-30,20,40); 
  obstacles.velocityX=-4;
  var select= Math.round(random(1,6));
  switch(select){
@@ -127,7 +127,7 @@ function spawn_obstacles(){
      break;
      default:break;
  }   
-  obstacles.lifetime=150;
+  obstacles.lifetime=(width+10)/4;
   obstacles.scale=0.4;
    obstaclesGroup.add(obstacles);
  }
