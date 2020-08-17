@@ -10,6 +10,7 @@ var obstacles,obstaclesGroup,obs_image1,obs_image2,obs_image3,obs_image4,obs_ima
 
 var game_state="play";
 
+var reset,reset2,resetImage1,resetImage2;
 function preload(){
   trex_running = loadAnimation("trex1.png","trex3.png","trex4.png");
   trex_collided = loadAnimation("trex_collided.png");
@@ -23,7 +24,9 @@ function preload(){
   obs_image4 = loadImage("obstacle4.png");
   obs_image5 = loadImage("obstacle5.png");
   obs_image6 = loadImage("obstacle6.png");
- // trex_running = loadAnimation("peterpan.jpg")
+
+  resetImage1 = loadImage("gameOver.png");
+  resetImage2 = loadImage("restart.png");
 }
 
 function setup() {
@@ -83,6 +86,9 @@ function draw() {
   
   trex.collide(invisibleGround);
   
+  if(trex.isTouching(obstaclesGroup)){
+     spawn_reset();
+     }
   drawSprites();
 }
 
@@ -126,10 +132,15 @@ function spawn_obstacles(){
      obstacles.addImage(obs_image6);
      break;
      default:break;
- }   
+ } 
   obstacles.lifetime=(width+10)/4;
   obstacles.scale=0.4;
    obstaclesGroup.add(obstacles);
  }
+function spawn_reset(){
+reset1=createSprite(width-190,height-20,20,20);
+  reset2=createSprite(width-170,height+20,20,20);
+  
+  reset1.addImage(resetImage1);
+  reset2.addImage(resetimage2);
 }
-
