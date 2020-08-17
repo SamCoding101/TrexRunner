@@ -29,17 +29,17 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  trex = createSprite(50,160,20,50);
+  trex = createSprite(50,width-70,20,50);
   trex.addAnimation("running", trex_running);
   // trex.addAnimation("collided",trex_collided)
   trex.scale = 0.5;
   
-  ground = createSprite(200,180,400,20);
+  ground = createSprite(width/2,height-20,width,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   ground.velocityX = -4;
 
-  invisibleGround = createSprite(200,190,400,10);
+  invisibleGround = createSprite(width/2,height-10,width,10);
   invisibleGround.visible = false;
   console.log(ground.width);
   
