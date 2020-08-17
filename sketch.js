@@ -70,6 +70,7 @@ function draw() {
     
   if(trex.isTouching(obstaclesGroup)){
    game_state="end";
+    spawn_reset();
   }  
   }else if(game_state=="end"){
     ground.velocityX=0; 
@@ -86,9 +87,9 @@ function draw() {
   
   trex.collide(invisibleGround);
   
-  if(trex.isTouching(obstaclesGroup)){
-     spawn_reset();
-     }
+  if(mousePressedOver(reset2)){
+     game_state="play"; 
+  }
   drawSprites();
 }
 
