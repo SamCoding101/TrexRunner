@@ -53,8 +53,9 @@ function draw() {
   if(game_state=="play"){
    score = score + Math.round(getFrameRate()/60); 
     
-  if(keyDown("space") && trex.y>100) {
+  if((keyDown("space")|| touches.length>0) && trex.y>100) {
    trex.velocityY = -10;
+    touches=[];
   } 
   if (ground.x < 0){
     ground.x = ground.width/2;   
