@@ -10,7 +10,7 @@ var obstacles,obstaclesGroup,obs_image1,obs_image2,obs_image3,obs_image4,obs_ima
 
 var game_state="play";
 
-var reset,reset2,resetImage1,resetImage2;
+var reset1,reset2,resetImage1,resetImage2;
 function preload(){
   trex_running = loadAnimation("trex1.png","trex3.png","trex4.png");
   trex_collided = loadAnimation("trex_collided.png");
