@@ -145,3 +145,4 @@ reset1=createSprite(width-190,height-20,20,20);
   reset1.addImage(resetImage1);
   reset2.addImage(resetImage2);
 }
+}
